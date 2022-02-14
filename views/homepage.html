@@ -1,0 +1,20 @@
+<html>
+	<center>
+		<script>
+			let submit_username = () => {
+				sessionStorage.setItem('username', document.getElementById('username').value);
+				window.location = '/chat';
+			}
+		</script>
+		<table>
+			<tr>
+				<td>
+					<input type = 'text' id = 'username' placeholder = 'Enter Username'>
+				</td>
+				<td>
+					<button onclick = 'submit_username()'>Submit</button>
+				</td>
+			</tr>
+		</table>
+	</center>
+</html>
