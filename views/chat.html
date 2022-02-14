@@ -2,9 +2,6 @@
 	<script src = "/socket.io/socket.io.js"></script>
 	<script>
 		const socket = io();
-		socket.on('connect', () => {
-			console.log('Connected');
-		});
 		socket.on('message', (message) => {
 			let temp = document.getElementById('messages').innerHTML;
 			temp += '<tr>' + '<td>' + message.username + '</td>' + '<td>' + message.data + '</td>' + '</tr>';
@@ -15,6 +12,8 @@
 		}
 	</script>
 	<center>
+		<h1 id = 'username_1'></h1>
+		<br>
 		<table>
 			<tr>
 				<td>
@@ -34,4 +33,7 @@
 			</tr>
 		</table>
 	</center>
+	<script>
+		document.getElementById('username_1').innerHTML = 'Username: ' + sessionStorage.getItem('username');
+	</script>
 </html>
